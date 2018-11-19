@@ -20,9 +20,7 @@ ipfs daemon >$GOPATH/log/ipfs.log 2>&1 &
 
 cd $SINGNET_REPOS
 
-#!!!!!!!!! NOT MASTER!!!!!!!!!!!
-git clone https://github.com/astroseger/platform-contracts
-#!!!!!!!!! NOT MASTER!!!!!!!!!!!
+git clone https://github.com/singnet/platform-contracts
 
 cd platform-contracts
 npm install
@@ -36,13 +34,9 @@ npm run-script package-npm
 # SNET-CLI
 cd $SINGNET_REPOS
 
-# !!!!!!!!!! NOT MASTER !!!!!!!!!!
-git clone https://github.com/astroseger/snet-cli
-cd snet-cli
-git checkout support-new-platform-contracts
-# !!!!!!!!!! NOT MASTER !!!!!!!!!!
+git clone https://github.com/singnet/snet-cli
 
-cd blockchain/
+cd snet-cli/blockchain/
 # this trick set correct networks/*.json for Registry and MultiPartyEscrow
 npm install -S $SINGNET_REPOS/platform-contracts/build/npm-module
 cd ..
