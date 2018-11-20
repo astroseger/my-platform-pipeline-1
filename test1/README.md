@@ -6,4 +6,6 @@ and ipfs
 group one endpoint)
 * run_client.sh  - make a call to the service
 * run_treasurer.sh - run treasurer server in order to see list
-of claimed channels, and claim your channles 
+of claimed channels, and claim your channels
+
+Test should be run on clean environment in the given order.
