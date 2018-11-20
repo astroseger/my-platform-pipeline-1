@@ -65,15 +65,16 @@ snet identity snet-user
 snet network local
 
 
-
-
 # DAEMON (Installation will fail because of Agent..)
 
-#cd $SINGNET_REPOS
-#git clone https://github.com/singnet/snet-daemon.git
-#cd snet-daemon
-#pushd resources/blockchain
-#npm install -S $SINGNET_REPOS/platform-contracts/build/npm-module
-#popd
-#./scripts/install
-#./scripts/build linux amd64
+cd $SINGNET_REPOS
+git clone https://github.com/singnet/snet-daemon.git
+cd snet-daemon
+
+# Take last contracts from the master
+pushd resources/blockchain
+npm install -S $SINGNET_REPOS/platform-contracts/build/npm-module
+popd
+
+./scripts/install
+./scripts/build linux amd64
