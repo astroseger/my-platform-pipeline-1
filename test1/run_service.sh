@@ -52,4 +52,4 @@ cat > snetd.config.json << EOF
 EOF
 
 # Start daemon
-../../../../../snet-daemon/build/snetd-linux-amd64
+../../../../snet-daemon/build/snetd-linux-amd64 
