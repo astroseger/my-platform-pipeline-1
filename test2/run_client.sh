@@ -15,7 +15,7 @@ snet client deposit 42000.22
 
 # open channel with our service (organization=testo service_name=tests)
 # channel with channel_id=0 should be created and initilized
-snet client open_init_channel_registry testo tests 42 100000000 -y
+snet client open_init_channel_registry testo2 tests 42 100000000 -y
 
 # call the server using stateless logic
 # You should replace <PATH_TO_YOUR_JPG> with path to some of your jpeg
