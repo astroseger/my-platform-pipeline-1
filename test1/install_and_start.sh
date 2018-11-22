@@ -26,21 +26,22 @@ cd platform-contracts
 npm install
 npm install ganache-cli
 npm run-script compile
-./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' >$GOPATH/log/ganache.log 2>&1 &
+./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' --network-id 829257324 >$GOPATH/log/ganache.log 2>&1 &
 ./node_modules/.bin/truffle migrate --network local 
-npm run-script package-npm
-
 
 # SNET-CLI
 cd $SINGNET_REPOS
 
 git clone https://github.com/singnet/snet-cli
 
-cd snet-cli/blockchain/
-# this trick set correct networks/*.json for Registry and MultiPartyEscrow
-npm install -S $SINGNET_REPOS/platform-contracts/build/npm-module
-cd ..
+cd snet-cli
 ./scripts/blockchain install
+
+# set contract addresses for our local network
+echo '{"829257324":{"events":{},"links":{},"address":"0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e","transactionHash":""}}' > snet_cli/resources/contracts/networks/MultiPartyEscrow.json 
+echo '{"829257324":{"events":{},"links":{},"address":"0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2","transactionHash":""}}' > snet_cli/resources/contracts/networks/Registry.json 
+echo '{"829257324":{"events":{},"links":{},"address":"0x6e5f20669177f5bdf3703ec5ea9c4d4fe3aabd14","transactionHash":""}}' > snet_cli/resources/contracts/networks/SingularityNetToken.json
+
 pip3 install -e .
 
 # Configure SNET-CLI for local work
@@ -65,7 +66,7 @@ snet identity snet-user
 snet network local
 
 
-# DAEMON (Installation will fail because of Agent..)
+# install DAEMON
 
 cd $SINGNET_REPOS
 git clone https://github.com/singnet/snet-daemon.git

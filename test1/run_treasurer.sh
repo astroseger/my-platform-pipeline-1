@@ -41,6 +41,6 @@ EOF
 
 # You can check balance of the service (second ganache identity address=0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB)
 # Unfortunately we should provide address of the token contract by hands
-snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB --snt 0x6e5f20669177f5bdf3703ec5ea9c4d4fe3aabd14
+snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 
