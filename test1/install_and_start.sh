@@ -1,5 +1,6 @@
 
 # Initial setup
+cd
 mkdir -p singnet/src/github.com/singnet
 cd singnet
 mkdir log
@@ -26,7 +27,7 @@ cd platform-contracts
 npm install
 npm install ganache-cli
 npm run-script compile
-./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' --network-id 829257324 >$GOPATH/log/ganache.log 2>&1 &
+./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' --networkId 829257324 >$GOPATH/log/ganache.log 2>&1 &
 ./node_modules/.bin/truffle migrate --network local 
 
 # SNET-CLI

@@ -1,6 +1,6 @@
 # First run install_and_start.sh
 # Initial setup
-cd singnet
+cd ~/singnet
 export GOPATH=`pwd`
 export SINGNET_REPOS=${GOPATH}/src/github.com/singnet
 export PATH=${GOPATH}/bin:${PATH}
